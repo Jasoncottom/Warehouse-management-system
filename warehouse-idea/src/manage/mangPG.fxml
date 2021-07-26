@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="500.0" style="-fx-background-color: #84c4e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manage.Controller">
+   <children>
+       <TabPane layoutX="1.0" layoutY="73.0" prefHeight="490.0" prefWidth="520.0" style="-fx-background-color: #80aee2; -fx-text-box-border: #1335aa;" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+              <Tab style="-fx-background-color: #aec2da;" text="商品信息">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="493.0">
+                        <children>
+                            <Button layoutX="293.0" layoutY="32.0" mnemonicParsing="false" onAction="#goodsSearch" style="-fx-background-color: #4a7faf; -fx-border-color: #000000;" text="查询" />
+                            <TextField fx:id="searchGoods" layoutX="132.0" layoutY="32.0" promptText="输入商品编号或商品名" />
+                            <TableView fx:id="Table" layoutY="101.0" prefHeight="350.0" prefWidth="520.0" style="-fx-background-color: #abceec;">
+                                <columns>
+                                    <TableColumn fx:id="sename" prefWidth="100.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="商品名" />
+                                    <TableColumn fx:id="seno" prefWidth="140.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="商品编号" />
+                                    <TableColumn fx:id="semf" prefWidth="150.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="供货商" />
+                                    <TableColumn fx:id="senum" prefWidth="128.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="商品数量" />
+                                </columns>
+                            </TableView>
+                        </children>
+                     </AnchorPane>
+                 </content>
+              </Tab>
+              <Tab style="-fx-background-color: #c9dde8;" text="进货信息">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <TextField fx:id="searchInGoods" layoutX="132.0" layoutY="32.0" promptText="输入商品编号或商品名" />
+                            <Button layoutX="293.0" layoutY="32.0" mnemonicParsing="false" onAction="#goodsInSearch" style="-fx-background-color: #4a7faf; -fx-border-color: #000000;" text="查询" />
+                            <TableView fx:id="TableIn" layoutY="101.0" prefHeight="350.0" prefWidth="520.0" style="-fx-background-color: #abceec;">
+                                <columns>
+                                    <TableColumn fx:id="senoIn" prefWidth="119.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="商品编号" />
+                                    <TableColumn fx:id="senameIn" prefWidth="102.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="商品名" />
+                                    <TableColumn fx:id="seadminIn" prefWidth="102.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="操作员" />
+                                    <TableColumn fx:id="sedateIn" prefWidth="92.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="入库时间" />
+                                    <TableColumn fx:id="senumIn" prefWidth="103.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="入库数量" />
+                                </columns>
+                            </TableView>
+                        </children>
+                     </AnchorPane>
+                 </content>
+              </Tab>
+              <Tab style="-fx-background-color: #aec2da;" text="出库记录">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="493.0">
+                        <children>
+                            <Button layoutX="293.0" layoutY="32.0" mnemonicParsing="false" onAction="#goodsOutSearch" style="-fx-background-color: #4a7faf; -fx-border-color: #000000;" text="查询" />
+                            <TextField fx:id="searchOutGoods" layoutX="132.0" layoutY="32.0" promptText="输入商品编号或商品名" />
+                            <TableView fx:id="TableOut" layoutY="101.0" prefHeight="350.0" prefWidth="520.0" style="-fx-background-color: #abceec;">
+                                <columns>
+                                    <TableColumn fx:id="senoOut" prefWidth="119.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="商品编号" />
+                                    <TableColumn fx:id="senameOut" prefWidth="102.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="商品名" />
+                                    <TableColumn fx:id="seadminOut" prefWidth="102.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="操作员" />
+                                    <TableColumn fx:id="sedateOut" prefWidth="92.0" style="-fx-background-color: #99cdff; -fx-border-color: #000000;" text="出库时间" />
+                                    <TableColumn fx:id="senumOut" prefWidth="103.0" style="-fx-background-color: #8ccee6; -fx-border-color: #000000;" text="出库数量" />
+                                </columns>
+                            </TableView>
+                        </children>
+                     </AnchorPane>
+                 </content>
+              </Tab>
+              <Tab style="-fx-background-color: #c9dde8;" text="货品出库">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #abceec;">
+                        <children>
+                            <Label layoutX="102.0" layoutY="146.0" text="出库数量：" />
+                            <Label layoutX="102.0" layoutY="186.0" text="出库时间：" />
+                            <TextField fx:id="out" layoutX="184.0" layoutY="95.0" promptText="请输入商品编号" />
+                            <TextField fx:id="numOut" layoutX="184.0" layoutY="140.0" />
+                            <Button layoutX="278.0" layoutY="260.0" mnemonicParsing="false" onAction="#goodsOut" style="-fx-background-color: #4a7faf; -fx-border-color: #000000;" text="确认" />
+                            <DatePicker fx:id="dateOut" layoutX="184.0" layoutY="181.0" />
+                            <Label layoutX="102.0" layoutY="100.0" text="商品编号：" />
+                            <Label fx:id="outMessage" layoutX="56.0" layoutY="265.0" prefHeight="17.0" prefWidth="211.0" />
+                        </children>
+                     </AnchorPane>
+                 </content>
+      
+              </Tab>
+              <Tab style="-fx-background-color: #aec2da;" text="货品入库">
+                 <content>
+                     <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #abceec;">
+                        <children>
+                            <Label layoutX="120.0" layoutY="76.0" text="商品编号：" />
+                            <Label layoutX="121.0" layoutY="122.0" text="商品名称：" />
+                            <Label layoutX="120.0" layoutY="169.0" text="供   货   商：" />
+                            <TextField fx:id="noIn" layoutX="195.0" layoutY="69.0" />
+                            <TextField fx:id="nameIn" layoutX="195.0" layoutY="115.0" />
+                            <TextField fx:id="mfIn" layoutX="195.0" layoutY="162.0" />
+                            <Button layoutX="312.0" layoutY="300.0" mnemonicParsing="false" onAction="#goodsIn" style="-fx-background-color: #4a7faf; -fx-border-color: #000000;" text="确认" />
+                            <Label layoutX="121.0" layoutY="211.0" text="入库时间：" />
+                            <Label layoutX="120.0" layoutY="248.0" text="入库数量：" />
+                            <TextField fx:id="numIn" layoutX="195.0" layoutY="242.0" />
+                            <DatePicker fx:id="dateIn" layoutX="195.0" layoutY="205.0" />
+                            <Label fx:id="inMessage" layoutX="138.0" layoutY="305.0" />
+                        </children>
+                     </AnchorPane>
+                 </content>
+              </Tab>
+            <Tab text="管理员注册">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="109.0" layoutY="86.0" text="账        号 " />
+                        <Label layoutX="109.0" layoutY="132.0" text="密         码" />
+                        <Label layoutX="109.0" layoutY="174.0" text="确认密码" />
+                        <TextField fx:id="newUser" layoutX="184.0" layoutY="81.0" promptText="请输入账号" />
+                        <TextField fx:id="conPassword" layoutX="184.0" layoutY="169.0" promptText="第二次密码与第一次相同" />
+                        <TextField fx:id="newPassword" layoutX="184.0" layoutY="127.0" promptText="请输入密码" />
+                        <Button layoutX="323.0" layoutY="242.0" mnemonicParsing="false" onAction="#res" text="确认" />
+                        <Label fx:id="lb" layoutX="120.0" layoutY="269.0" />
+                        <Label layoutX="108.0" layoutY="212.0" text="姓         名" />
+                        <TextField fx:id="newName" layoutX="184.0" layoutY="207.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+       </TabPane>
+       <Label text="仓库管理系统" textAlignment="CENTER">
+           <font>
+               <Font size="34.0" />
+           </font>
+       </Label>
+   </children>
+</AnchorPane>
