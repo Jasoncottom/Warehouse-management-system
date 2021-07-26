@@ -23,7 +23,7 @@
 <br /> 
 
 ## **部署**
-打开Idea 选择导入<br /> 
+打开Idea 选择导入“warehouse-idea”这个文件夹<br /> 
 安装设置好JDK 1.8.0 <br /> 
 点击运行即可
 
